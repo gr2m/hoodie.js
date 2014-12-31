@@ -424,7 +424,7 @@ exports.cleanup = function(state) {
 // make sure to remove a promise
 //
 exports.disconnect = function(state) {
-  return state.hoodie.remote.disconnect();
+  return state.hoodie.store.disconnect();
 };
 
 
@@ -623,7 +623,7 @@ exports.withSingleRequest = function(state, name, requestFunction) {
 //
 exports.pushLocalChanges = function(state, options) {
   if (state.hoodie.store.hasLocalChanges() && !options.ignoreLocalChanges) {
-    return state.hoodie.remote.push();
+    return state.hoodie.store.push();
   }
   return resolve();
 };

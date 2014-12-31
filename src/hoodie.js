@@ -57,10 +57,11 @@ var Hoodie = module.exports = (function() {
     hoodie.extend(require('./hoodie/request'));
     hoodie.extend(require('./hoodie/connection'));
 
-    hoodie.extend(require('./hoodie/store'));
+    // hoodie.extend(require('./hoodie/store'));
+    hoodie.extend(require('hoodie-store-pouchdb'));
     hoodie.extend(require('./hoodie/account'));
-    hoodie.extend(require('./hoodie/remote'));
-    hoodie.extend(require('./hoodie/task'));
+    // hoodie.extend(require('./hoodie/remote'));
+    // hoodie.extend(require('./hoodie/task'));
 
     // authenticate
     // we use a closure to not pass the username to connect, as it
